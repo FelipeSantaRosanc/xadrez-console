@@ -13,12 +13,18 @@ namespace tabuleiro
 
         public Peca( Tabuleiro tab, Cor cor)
         {
-            this.posicao = null ;
+            this.posicao = null;
             this.tabuleiro = tab;
             this.cor = cor;
             this.qtdeMovimentos = 0;
             
         }
+
+        public void incrementarQuantidaddeMovimento()
+        {
+            qtdeMovimentos++;
+        }
+
 
 
     }
