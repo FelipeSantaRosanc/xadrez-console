@@ -5,12 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using tabuleiro;
 
-namespace xadrez_console.xadrez
+namespace xadrez
 {
-    internal class Dama : Peca
+    class Dama : Peca
     {
-        public Dama(Tabuleiro tab, Cor cor) : base(tab, cor) { }
 
+        public Dama(Tabuleiro tab, Cor cor) : base(tab, cor)
+        {
+        }
 
         public override string ToString()
         {
@@ -29,8 +31,7 @@ namespace xadrez_console.xadrez
 
             Posicao pos = new Posicao(0, 0);
 
-
-            // Esquerda
+            // esquerda
             pos.definirValores(posicao.linha, posicao.coluna - 1);
             while (tab.posicaoValida(pos) && podeMover(pos))
             {
@@ -41,7 +42,8 @@ namespace xadrez_console.xadrez
                 }
                 pos.definirValores(pos.linha, pos.coluna - 1);
             }
-            // Direita
+
+            // direita
             pos.definirValores(posicao.linha, posicao.coluna + 1);
             while (tab.posicaoValida(pos) && podeMover(pos))
             {
@@ -52,7 +54,8 @@ namespace xadrez_console.xadrez
                 }
                 pos.definirValores(pos.linha, pos.coluna + 1);
             }
-            // Acima
+
+            // acima
             pos.definirValores(posicao.linha - 1, posicao.coluna);
             while (tab.posicaoValida(pos) && podeMover(pos))
             {
@@ -63,7 +66,8 @@ namespace xadrez_console.xadrez
                 }
                 pos.definirValores(pos.linha - 1, pos.coluna);
             }
-            // Abaixo
+
+            // abaixo
             pos.definirValores(posicao.linha + 1, posicao.coluna);
             while (tab.posicaoValida(pos) && podeMover(pos))
             {
@@ -75,7 +79,7 @@ namespace xadrez_console.xadrez
                 pos.definirValores(pos.linha + 1, pos.coluna);
             }
 
-            // Noroeste
+            // NO
             pos.definirValores(posicao.linha - 1, posicao.coluna - 1);
             while (tab.posicaoValida(pos) && podeMover(pos))
             {
@@ -87,7 +91,7 @@ namespace xadrez_console.xadrez
                 pos.definirValores(pos.linha - 1, pos.coluna - 1);
             }
 
-            // Nordeste
+            // NE
             pos.definirValores(posicao.linha - 1, posicao.coluna + 1);
             while (tab.posicaoValida(pos) && podeMover(pos))
             {
@@ -98,7 +102,8 @@ namespace xadrez_console.xadrez
                 }
                 pos.definirValores(pos.linha - 1, pos.coluna + 1);
             }
-            //Sudeste
+
+            // SE
             pos.definirValores(posicao.linha + 1, posicao.coluna + 1);
             while (tab.posicaoValida(pos) && podeMover(pos))
             {
@@ -110,8 +115,7 @@ namespace xadrez_console.xadrez
                 pos.definirValores(pos.linha + 1, pos.coluna + 1);
             }
 
-
-            //Sudoeste
+            // SO
             pos.definirValores(posicao.linha + 1, posicao.coluna - 1);
             while (tab.posicaoValida(pos) && podeMover(pos))
             {
@@ -122,9 +126,8 @@ namespace xadrez_console.xadrez
                 }
                 pos.definirValores(pos.linha + 1, pos.coluna - 1);
             }
+
             return mat;
         }
-
-
     }
 }

@@ -20,8 +20,6 @@ namespace tabuleiro
             
         }
 
-       
-
         public void incrementarQteMovimentos()
         {
             qtdeMovimentos++;

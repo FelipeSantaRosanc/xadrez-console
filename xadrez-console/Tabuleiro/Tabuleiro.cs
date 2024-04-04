@@ -4,16 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using tabuleiro;
-using xadrez_console.tabuleiro;
+
 
 namespace tabuleiro
 {
-    internal class Tabuleiro
+    class Tabuleiro
     {
+
         public int linhas { get; set; }
         public int colunas { get; set; }
         private Peca[,] pecas;
-
 
         public Tabuleiro(int linhas, int colunas)
         {
@@ -32,21 +32,18 @@ namespace tabuleiro
             return pecas[pos.linha, pos.coluna];
         }
 
-
-        public bool existePeca(Peca p,Posicao pos)
+        public bool existePeca(Posicao pos)
         {
             validarPosicao(pos);
             return peca(pos) != null;
         }
 
-
         public void colocarPeca(Peca p, Posicao pos)
         {
-            if (existePeca(p,pos))
+            if (existePeca(pos))
             {
                 throw new TabuleiroException("Já existe uma peça nessa posição!");
             }
-
             pecas[pos.linha, pos.coluna] = p;
             p.posicao = pos;
         }
@@ -57,15 +54,11 @@ namespace tabuleiro
             {
                 return null;
             }
-
             Peca aux = peca(pos);
             aux.posicao = null;
             pecas[pos.linha, pos.coluna] = null;
             return aux;
-
         }
-
-
 
         public bool posicaoValida(Posicao pos)
         {
@@ -74,20 +67,14 @@ namespace tabuleiro
                 return false;
             }
             return true;
-
         }
-
 
         public void validarPosicao(Posicao pos)
         {
             if (!posicaoValida(pos))
             {
-                throw new TabuleiroException("Posição inválida!!");
+                throw new TabuleiroException("Posição inválida!");
             }
-
-
         }
-
-
     }
 }

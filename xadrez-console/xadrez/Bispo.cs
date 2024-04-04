@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using tabuleiro;
 
-namespace xadrez_console.xadrez
+namespace xadrez
 {
-    internal class Bispo : Peca
+     class Bispo : Peca
     {
         public Bispo(Tabuleiro tab, Cor cor) : base(tab, cor) { }
 
@@ -38,7 +38,7 @@ namespace xadrez_console.xadrez
                 {
                     break;
                 }
-                pos.definirValores(pos.linha -1, pos.coluna - 1);
+                pos.definirValores(pos.linha - 1, pos.coluna - 1);
             }
 
             // Nordeste
@@ -53,7 +53,7 @@ namespace xadrez_console.xadrez
                 pos.definirValores(pos.linha - 1, pos.coluna + 1);
             }
 
-            //Sudeste
+            // Sudeste
             pos.definirValores(posicao.linha + 1, posicao.coluna + 1);
             while (tab.posicaoValida(pos) && podeMover(pos))
             {
@@ -62,11 +62,10 @@ namespace xadrez_console.xadrez
                 {
                     break;
                 }
-                pos.definirValores(pos.linha +1, pos.coluna +1);
+                pos.definirValores(pos.linha + 1, pos.coluna + 1);
             }
 
-
-            //Sudoeste
+            // Sudoeste
             pos.definirValores(posicao.linha + 1, posicao.coluna - 1);
             while (tab.posicaoValida(pos) && podeMover(pos))
             {

@@ -1,7 +1,6 @@
 ﻿using System;
 using tabuleiro;
 using xadrez;
-using xadrez_console.tabuleiro;
 
 
 namespace xadrez_console
@@ -35,10 +34,12 @@ namespace xadrez_console
                         Tela.imprimirTabuleiro(partida.tab, posicoesPossiveis);
 
 
-                        Console.WriteLine("");
+                        
+                        
+                        Console.WriteLine();
                         Console.Write("Destino: ");
                         Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
-                        partida.validarPosicaoDestino(origem, destino);
+                        partida.validarPosicaoDeDestino(origem, destino);
 
                         partida.realizaJogada(origem, destino);
                     }
